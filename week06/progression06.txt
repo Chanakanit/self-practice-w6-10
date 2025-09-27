@@ -1,0 +1,99 @@
+Test 1: applyTwice(fn, x)
+เป็นการฝึกเรื่อง: Higher-Order Function (การส่งฟังก์ชันเข้าไปเป็นพารามิเตอร์)
+วิธีที่ใช้: เรียก fn(x) สองครั้งต่อเนื่อง แล้ว return ค่า
+
+Test 2: makePowerFn(n)
+เป็นการฝึกเรื่อง: Closure + Function Factory
+วิธีที่ใช้: return ฟังก์ชันที่จำค่า n ไว้ และนำมาใช้กับ x → x**n
+
+Test 3: compose(f, g)
+เป็นการฝึกเรื่อง: Function Composition
+วิธีที่ใช้: สร้างฟังก์ชันใหม่ h(x) = f(g(x)) โดย return function
+
+Test 4: mapWith(fn, arr)
+เป็นการฝึกเรื่อง: การสร้างฟังก์ชันเลียนแบบ Array.map
+วิธีที่ใช้: ใช้ .map() โดยส่ง fn เข้าไปกับทุก element
+
+Test 5: filterWith(fn, arr)
+เป็นการฝึกเรื่อง: การสร้างฟังก์ชันเลียนแบบ Array.filter
+วิธีที่ใช้: ใช้ .filter() ส่ง fn เป็น callback ตรวจเงื่อนไข
+
+Test 6: reduceWith(fn, arr, init)
+เป็นการฝึกเรื่อง: การสร้างฟังก์ชันเลียนแบบ Array.reduce
+วิธีที่ใช้: ใช้ .reduce() โดยส่ง fn และค่า init
+
+Test 7: curryAdd(a)
+เป็นการฝึกเรื่อง: Currying
+วิธีที่ใช้: ซ้อน function สามชั้น เก็บค่า a, b, c และ return ผลรวม
+
+Test 8: once(fn)
+เป็นการฝึกเรื่อง: Closure + Function Wrapper
+วิธีที่ใช้: ใช้ flag call + result เก็บสถานะ เรียกได้ครั้งแรกครั้งเดียว
+
+Test 9: makeCounter()
+เป็นการฝึกเรื่อง: Closure (เก็บ state ภายใน)
+วิธีที่ใช้: return function ที่เพิ่มค่า count ทีละ 1 ทุกครั้งที่เรียก
+
+Test 10: negate(fn)
+เป็นการฝึกเรื่อง: Higher-Order Function (logic inversion)
+วิธีที่ใช้: return function ที่คืน !fn(x)
+
+Test 11: callNTimes(fn, n)
+เป็นการฝึกเรื่อง: Loop + Function Callback
+วิธีที่ใช้: ใช้ for loop เรียก fn() ซ้ำ n ครั้ง
+
+Test 12: pipe(...fns)
+เป็นการฝึกเรื่อง: Function Composition แบบซ้ายไปขวา
+วิธีที่ใช้: ใช้ reduce ไล่ fn จากซ้ายไปขวา acc → cur
+
+Test 13: memoize(fn)
+เป็นการฝึกเรื่อง: Memoization (Cache) + Closure
+วิธีที่ใช้: ใช้ object check เก็บค่าที่เคยคำนวณไว้แล้ว
+
+Test 14: zipWith(fn, arr1, arr2)
+เป็นการฝึกเรื่อง: Array Combination
+วิธีที่ใช้: ใช้ map + fn(element1, element2) รวมผลลัพธ์แบบจับคู่
+
+Test 15: repeatFn(fn, times)
+เป็นการฝึกเรื่อง: Function Wrapper + Loop
+วิธีที่ใช้: return function ที่รัน fn() หลายครั้ง เก็บใน array
+
+Test 16: doubleMap(arr, fn)
+เป็นการฝึกเรื่อง: Array Transformation
+วิธีที่ใช้: ใช้ map(fn(e) * 2) เพื่อเปลี่ยนค่าและคูณ 2
+
+Test 17: callAndReturn(fn, x)
+เป็นการฝึกเรื่อง: Function Execution + Template String
+วิธีที่ใช้: เรียก fn(x) แล้ว format เป็น string "Result: <value>"
+
+Test 18: transformAndFilter(arr, transformFn, filterFn)
+เป็นการฝึกเรื่อง: Method Chaining (map → filter)
+วิธีที่ใช้: map แปลงค่า แล้ว filter ทิ้งตามเงื่อนไข
+
+Test 19: countBy(arr, fn)
+เป็นการฝึกเรื่อง: Reduce + Object Manipulation
+วิธีที่ใช้: ใช้ reduce สะสม object ที่ key = fn(element), value = count
+
+Test 20: uniqueBy(arr, fn)
+เป็นการฝึกเรื่อง: Unique Filtering (custom key)
+วิธีที่ใช้: ใช้ reduce + some() ตรวจว่ามีค่า fn(cur) แล้วหรือยัง
+
+Test 21: createMultiplier(n)
+เป็นการฝึกเรื่อง: Closure (function factory)
+วิธีที่ใช้: return function (x) → x * n โดยจำค่า n ไว้
+
+Test 22: applyAll(fns, x)
+เป็นการฝึกเรื่อง: Higher-Order Function + Array.map
+วิธีที่ใช้: ใช้ map เรียกทุกฟังก์ชันใน fns กับค่า x
+
+Test 23: partition(arr, fn)
+เป็นการฝึกเรื่อง: Reduce + Array Grouping
+วิธีที่ใช้: reduce แยก array ออกเป็น [pass, fail]
+
+Test 24: repeatStringFn(fn, times)
+เป็นการฝึกเรื่อง: Loop + Function Execution
+วิธีที่ใช้: ใช้ for loop เรียก fn() แล้วต่อ string ซ้ำ times ครั้ง
+
+Test 25: averageBy(arr, fn)
+เป็นการฝึกเรื่อง: Reduce + Average Calculation
+วิธีที่ใช้: ใช้ reduce รวม fn(x) ทุกตัว แล้วหารด้วย arr.length
