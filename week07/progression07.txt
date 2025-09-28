@@ -1,0 +1,99 @@
+Test 1: Select #title
+เป็นการฝึกเรื่อง: การเลือก element ด้วย getElementById
+วิธีที่ใช้: ใช้ document.getElementById("title") แล้วอ่านค่า textContent
+
+Test 2: Count .note
+เป็นการฝึกเรื่อง: เลือก element ด้วย class name
+วิธีที่ใช้: ใช้ getElementsByClassName("note") แล้วดู .length
+
+Test 3: Select <li> inside #menu
+เป็นการฝึกเรื่อง: เลือก child element และวนอ่านค่า
+วิธีที่ใช้: ใช้ getElementsByTagName("li") แล้วแปลงเป็น array → .map(li.textContent)
+
+Test 4: Change text of #title
+เป็นการฝึกเรื่อง: การเปลี่ยน textContent ของ element
+วิธีที่ใช้: เขียนตรง ๆ title.textContent = "DOM Mastery"
+
+Test 5: Add new <li>
+เป็นการฝึกเรื่อง: สร้าง element และต่อเข้า DOM
+วิธีที่ใช้: document.createElement("li") → appendChild
+
+Test 6: Remove .warning
+เป็นการฝึกเรื่อง: การลบ element ออกจาก DOM
+วิธีที่ใช้: querySelector(".warning") → .remove()
+
+Test 7: Change background of .note
+เป็นการฝึกเรื่อง: การแก้ style ของหลาย element
+วิธีที่ใช้: [...note].forEach(...) แล้วแก้ .style.backgroundColor
+
+Test 8: Toggle #secret
+เป็นการฝึกเรื่อง: การควบคุมการแสดงผล (display)
+วิธีที่ใช้: เขียน ternary style.display = ... ? "block" : "none"
+
+Test 9: Add class highlight
+เป็นการฝึกเรื่อง: จัดการ class ของ element
+วิธีที่ใช้: querySelectorAll("#appetizer li") แล้วใช้ .setAttribute("class", "highlight")
+
+Test 10: Create button with event
+เป็นการฝึกเรื่อง: สร้าง element + event listener
+วิธีที่ใช้: createElement("button") → addEventListener("click", ...) → appendChild
+
+Test 11: Replace text of li
+เป็นการฝึกเรื่อง: การแก้ไข node ที่เลือก
+วิธีที่ใช้: เขียนตรง ๆ liAppetizer[1].textContent = "Salad (Fresh)"
+
+Test 12: Count .meat inside #menu
+เป็นการฝึกเรื่อง: การใช้ classList ตรวจสอบ class
+วิธีที่ใช้: [...liMenu].filter(li => li.classList.contains("meat")).length
+
+Test 13: Clone #appetizer
+เป็นการฝึกเรื่อง: การ clone node
+วิธีที่ใช้: cloneNode(true) เพื่อ clone ทั้ง subtree แล้ว append
+
+Test 14: Add attribute
+เป็นการฝึกเรื่อง: การเพิ่ม attribute ให้ element
+วิธีที่ใช้: setAttribute("data-id", "123")
+
+Test 15: Remove class
+เป็นการฝึกเรื่อง: การจัดการ class ด้วย classList
+วิธีที่ใช้: note[0].classList.remove("note")
+
+Test 16: Prepend new <li>
+เป็นการฝึกเรื่อง: เพิ่ม element ไปยัง list
+วิธีที่ใช้: createElement("li") → appendChild (แม้โจทย์บอก prepend แต่คุณใช้ append)
+
+Test 17: Wrap element with new parent
+เป็นการฝึกเรื่อง: ย้าย element เข้าไปอยู่ใน wrapper ใหม่
+วิธีที่ใช้: createElement("section") → insertBefore → appendChild
+
+Test 18: Add border
+เป็นการฝึกเรื่อง: การเปลี่ยน style โดยตรง
+วิธีที่ใช้: menu.style.border = "1px solid"
+
+Test 19: Get innerHTML
+เป็นการฝึกเรื่อง: อ่านโครงสร้างภายใน element
+วิธีที่ใช้: app.innerHTML
+
+Test 20: Replace #secret with <p>
+เป็นการฝึกเรื่อง: แทนที่ node เดิมด้วย node ใหม่
+วิธีที่ใช้: replaceWith(newNode)
+
+Test 21: Add click event to li
+เป็นการฝึกเรื่อง: วน element แล้วผูก event
+วิธีที่ใช้: [...liMenu].forEach(li => li.addEventListener("click", ...))
+
+Test 22: Dynamically create list
+เป็นการฝึกเรื่อง: สร้าง element แบบ loop
+วิธีที่ใช้: for loop → createElement("li") → appendChild
+
+Test 23: Check attribute exists
+เป็นการฝึกเรื่อง: ตรวจสอบ attribute
+วิธีที่ใช้: title.hasAttribute("data-id")
+
+Test 24: Uppercase all text in li
+เป็นการฝึกเรื่อง: แก้ไข text ของหลาย element
+วิธีที่ใช้: querySelectorAll → forEach → .textContent = .toUpperCase()
+
+Test 25: Remove all children
+เป็นการฝึกเรื่อง: ลบ children ทั้งหมดออกจาก element
+วิธีที่ใช้: while (dynamic.firstChild) dynamic.removeChild(dynamic.firstChild)
