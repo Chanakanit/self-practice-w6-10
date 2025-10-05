@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Practice</title>
+    <style>
+      .note {
+        background-color: lightyellow;
+      }
+      .warning {
+        color: red;
+      }
+      .highlight {
+        background-color: lightgreen;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Welcome to DOM Practice</h1>
+    <p class="note">Remember to save your work!</p>
+    <p class="note warning">Do not refresh before saving.</p>
+
+    <div id="menu">
+      <h2>Menu</h2>
+      <ul id="appetizer">
+        <li class="vegan">Spring Rolls</li>
+        <li>Salad</li>
+        <li class="meat">Chicken Wings</li>
+      </ul>
+      <ul id="soup">
+        <li class="meat">Beef Soup</li>
+        <li class="vegan">Tomato Soup</li>
+        <li>Seaweed Soup</li>
+      </ul>
+    </div>
+
+    <div id="secret">This is a secret section!</div>
+    <div id="dynamic"></div>
+
+    <form id="info">
+      <input type="text" name="fname" placeholder="First Name" />
+      <input type="text" name="lname" placeholder="Last Name" />
+    </form>
+
+    <div id="app"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
