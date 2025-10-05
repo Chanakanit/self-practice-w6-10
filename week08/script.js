@@ -33,34 +33,61 @@ console.log("Test 5: ", soup.lastChild.textContent);
 
 // Test 6: Remove the first element with class "warning"
 // ---------------------------------------------
-const warning = document.getElementsByClassName(warning)
-warning.remove()
-console.log("Test 6: ");
+const warning = document.getElementsByClassName('warning')
+if (warning.length > 0) {
+    warning[0].remove()
+}
+console.log("Test 6: ", warning.length);
 
 
 // Test 7: Change the background color of all .note elements to yellow
 // ---------------------------------------------
-console.log("Test 7: ");
+[...note].forEach(el => { el.style.backgroundColor = 'yellow'})
+console.log("Test 7: ", note[0].style.backgroundColor)
 
 
 // Test 8: Toggle visibility of #secret (hide/show)
 // ---------------------------------------------
-console.log("Test 8: ");
+const secret = document.getElementById('secret')
+if (secret){
+    if(secret.style.display === 'none'){
+        secret.style.display = 'block'
+    } else{
+        secret.style.display = 'none'
+    }
+}
+console.log("Test 8: ", secret.style.display);
 
 
 // Test 9: Add class "highlight" to every .vegan item
 // ---------------------------------------------
-console.log("Test 9: ");
+const vegan = document.getElementsByClassName('vegan')
+Array.from(vegan).forEach(el => {
+    el.classList.add('highlight')
+    
+})
+console.log("Test 9: ", vegan);
 
 
 // Test 10: Create a button that logs "Clicked!" when pressed
 // ---------------------------------------------
-console.log("Test 10: ");
+const button = document.createElement('button');
+button.textContent = 'button'
+document.body.appendChild(button)
+
+
+button.addEventListener('click', () => {
+    console.log("Test 10: Clicked!");
+    
+})
+
+console.log("Test 10: click button");
 
 
 // Test 11: Replace "Beef Soup" with "Pork Soup"
 // ---------------------------------------------
-console.log("Test 11: ");
+soup.firstElementChild.textContent = 'Pork Soup'
+console.log("Test 11: ", soup.firstElementChild);
 
 
 // Test 12: Count how many .meat items exist under #menu
