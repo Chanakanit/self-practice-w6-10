@@ -137,24 +137,47 @@ console.log("Test 20: ");
 
 // Test 21: Add click event to each <li> in #menu to log its textContent
 // ---------------------------------------------
-console.log("Test 21: ");
+Array.from(liMenu).forEach(el => {
+    el.addEventListener('click', () => {
+        console.log("test 21: ",el.textContent)
+    })
+})
+console.log("Test 21: click li in menu");
 
 
 // Test 22: Create 5 <li> (1–5) dynamically inside #dynamic
 // ---------------------------------------------
+const dynamic = document.getElementById('dynamic')
+for (let i = 1; i <= 5; i++) {
+    let li = document.createElement('li')
+    li.textContent = i
+    dynamic.appendChild(li)
+}
 console.log("Test 22: ");
 
 
 // Test 23: Check if #title has attribute data-id
 // ---------------------------------------------
+if (title.hasAttribute('data-id')){
+    console.log('Test 23: title has attribute data-id')
+} else{
+    console.log('Test 24: title has not attribute data-id')
+}
 console.log("Test 23: ");
 
 
 // Test 24: Change all text inside #appetizer to uppercase
 // ---------------------------------------------
-console.log("Test 24: ");
+const appetizer = document.getElementById('appetizer')
+Array.from(appetizer.children).forEach(el => {
+    el.textContent = el.textContent.toUpperCase();
+})
+console.log("Test 24: ", );
 
 
 // Test 25: Remove all children of #dynamic
 // ---------------------------------------------
+Array.from(dynamic.children).forEach(el => {
+    el.remove()
+})
 console.log("Test 25: ");
