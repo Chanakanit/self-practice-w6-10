@@ -49,14 +49,8 @@ console.log("Test 7: ", note[0].style.backgroundColor)
 // Test 8: Toggle visibility of #secret (hide/show)
 // ---------------------------------------------
 const secret = document.getElementById('secret')
-if (secret){
-    if(secret.style.display === 'none'){
-        secret.style.display = 'block'
-    } else{
-        secret.style.display = 'none'
-    }
-}
-console.log("Test 8: ", secret.style.display);
+secret.classList.toggle('hidden')
+console.log("Test 8: ", secret.classList);
 
 
 // Test 9: Add class "highlight" to every .vegan item
@@ -92,47 +86,63 @@ console.log("Test 11: ", soup.firstElementChild);
 
 // Test 12: Count how many .meat items exist under #menu
 // ---------------------------------------------
-console.log("Test 12: ");
+const meat = document.querySelectorAll('#menu .meat')
+console.log("Test 12: ", meat.length);
 
 
 // Test 13: Clone #appetizer and append it to the body
 // ---------------------------------------------
-console.log("Test 13: ");
+const appetizer = document.getElementById('appetizer');
+const cloneApp = appetizer.cloneNode(true)
+document.body.appendChild(cloneApp)
+console.log("Test 13: ", cloneApp);
 
 
 // Test 14: Add attribute data-id="menu1" to #menu
 // ---------------------------------------------
-console.log("Test 14: ");
+menu.setAttribute('data-id', 'menu1')
+console.log("Test 14: ", menu.dataset);
 
 
 // Test 15: Remove class "note" from the first element that has it
 // ---------------------------------------------
-console.log("Test 15: ");
-
+note[0].remove()
+console.log("Test 15: ", note[0]);
 
 // Test 16: Prepend a new <li> “Soup of the Day” to #appetizer
 // ---------------------------------------------
-console.log("Test 16: ");
+const liSoup = document.createElement('li')
+liSoup.textContent = 'Soup of the Day'
+appetizer.prepend(liSoup)
+console.log("Test 16: ", appetizer.firstElementChild.textContent);
 
 
 // Test 17: Wrap #menu inside a new <section>
 // ---------------------------------------------
-console.log("Test 17: ");
+const section = document.createElement('section')
+menu.parentNode.insertBefore(section, menu)
+section.append(menu)
+console.log("Test 17: ", section.firstElementChild);
 
 
 // Test 18: Add a solid border around #menu
 // ---------------------------------------------
-console.log("Test 18: ");
+menu.style.border = '1px solid'
+console.log("Test 18: ", menu.style.border);
 
 
 // Test 19: Log the innerHTML of #menu
 // ---------------------------------------------
-console.log("Test 19: ");
+
+console.log("Test 19: ", menu.innerHTML);
 
 
 // Test 20: Replace #secret with <p>“Secret Removed”</p>
 // ---------------------------------------------
-console.log("Test 20: ");
+const pSecret = document.createElement('p')
+pSecret.textContent = 'Secret Removed'
+secret.parentNode.replaceChild(pSecret, secret)
+console.log("Test 20: ", pSecret.textContent);
 
 
 // Test 21: Add click event to each <li> in #menu to log its textContent
