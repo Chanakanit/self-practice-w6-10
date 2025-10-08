@@ -1,0 +1,101 @@
+## DOM Training Progression Log ##
+
+Test 1: Select #title
+- เป็นการฝึกเรื่อง: การเลือก element ด้วย ID ที่เจาะจง
+- วิธีที่ใช้: ใช้ `document.getElementById("title")` แล้วอ่านค่า `.textContent` ตรงๆ เลย ง่ายสุด
+
+Test 2: Count .note
+- เป็นการฝึกเรื่อง: การเลือก element ทั้งหมดด้วย CSS Selector
+- วิธีที่ใช้: ใช้ `document.querySelectorAll('.note')` เพื่อเก็บทุกตัวเป็น NodeList แล้วนับด้วย `.length`
+
+Test 3: Select <li> inside #menu
+- เป็นการฝึกเรื่อง: การเลือก child elements ด้วย Tag Name
+- วิธีที่ใช้: เลือก `#menu` มาก่อน แล้วใช้ `.getElementsByTagName("li")` เพื่อหา `<li>` ทั้งหมดที่อยู่ข้างใน
+
+Test 4: Change text of #title
+- เป็นการฝึกเรื่อง: การเปลี่ยนข้อความใน element ที่เลือกมาแล้ว
+- วิธีที่ใช้: เขียนทับค่าเดิมไปเลย `title.textContent = "DOM Mastery"`
+
+Test 5: Add new <li>
+- เป็นการฝึกเรื่อง: สร้าง element ใหม่ขึ้นมาในอากาศแล้วเอาไปแปะใน DOM
+- วิธีที่ใช้: `document.createElement("li")` สร้าง `<li>` ขึ้นมา → กำหนด `.textContent` → ใช้ `.appendChild()` ต่อท้ายเข้าไปใน `<ul>` ที่ต้องการ
+
+Test 6: Remove .warning
+- เป็นการฝึกเรื่อง: การลบ element ออกจาก DOM
+- วิธีที่ใช้: ใช้ `document.getElementsByClassName('warning')` หามาก่อน (ได้เป็น Collection) แล้วสั่ง `.remove()` ที่ตัวแรก (`[0]`)
+
+Test 7: Change background of .note
+- เป็นการฝึกเรื่อง: วนลูปแก้ style ของหลาย element
+- วิธีที่ใช้: เอา NodeList ที่ได้จาก `querySelectorAll` มาแปลงเป็น Array `[...note]` แล้วใช้ `.forEach()` วนแก้ `.style.backgroundColor` ทีละตัว
+
+Test 8: Toggle #secret
+- เป็นการฝึกเรื่อง: การสลับ class เพื่อควบคุมการแสดงผล (โชว์/ซ่อน)
+- วิธีที่ใช้: ใช้ `element.classList.toggle('hidden')` ซึ่งง่ายกว่ามานั่งเช็ค display เองเยอะ
+
+Test 9: Add class highlight
+- เป็นการฝึกเรื่อง: การเพิ่ม class ให้กับหลาย element
+- วิธีที่ใช้: ใช้ `getElementsByClassName('vegan')` หา element ทั้งหมด → วนลูปด้วย `.forEach()` แล้วใช้ `.classList.add('highlight')` กับทุกตัว
+
+Test 10: Create button with event
+- เป็นการฝึกเรื่อง: สร้าง element, กำหนด event, แล้วเอาไปแปะในหน้าเว็บ
+- วิธีที่ใช้: `createElement("button")` → ใช้ `.addEventListener("click", ...)` เพื่อดัก event → `.appendChild()` เข้า `<body>`
+
+Test 11: Replace text of li
+- เป็นการฝึกเรื่อง: การแก้ไข child element ตัวแรกโดยตรง
+- วิธีที่ใช้: อ้างอิงถึง element ที่ต้องการแก้ `soup.firstElementChild` แล้วยัดค่าใหม่ใส่ `.textContent`
+
+Test 12: Count .meat inside #menu
+- เป็นการฝึกเรื่อง: การเลือก element ด้วย selector ที่ซับซ้อน (descendant)
+- วิธีที่ใช้: ใช้ `querySelectorAll('#menu .meat')` ทีเดียวจบ ได้ทุกตัวที่ตรงเงื่อนไข แล้วนับ `.length`
+
+Test 13: Clone #appetizer
+- เป็นการฝึกเรื่อง: การคัดลอก element ทั้งยวง (ทั้งตัวมันเองและลูกๆ)
+- วิธีที่ใช้: ใช้ `.cloneNode(true)` (true หมายถึงเอาลูกๆ มาด้วย) แล้วค่อยเอาตัวที่ clone ไป `.appendChild()` ที่อื่น
+
+Test 14: Add attribute
+- เป็นการฝึกเรื่อง: การเพิ่ม attribute ที่ไม่มีอยู่แต่แรกให้ element
+- วิธีที่ใช้: ใช้ `.setAttribute("data-id", "menu1")` ง่ายและชัดเจน
+
+Test 15: Remove .warning element
+- เป็นการฝึกเรื่อง: การลบ element ที่เลือกมาออกจาก DOM (ไม่ใช่แค่ลบ class)
+- วิธีที่ใช้: เลือก element ที่มี class `.note` ตัวแรกมา แล้วสั่ง `.remove()` ทิ้งไปเลย
+
+Test 16: Prepend new <li>
+- เป็นการฝึกเรื่อง: การเพิ่ม element ไปไว้ "ข้างหน้าสุด" ของ parent
+- วิธีที่ใช้: `createElement("li")` → ใช้ `.prepend()` เพื่อแทรกเป็น child ตัวแรก
+
+Test 17: Wrap element with new parent
+- เป็นการฝึกเรื่อง: การย้าย element เข้าไปอยู่ใน element ใหม่ที่เราสร้างขึ้น
+- วิธีที่ใช้: `createElement("section")` สร้าง wrapper → ใช้ `.insertBefore()` เพื่อวาง wrapper ไว้ก่อน element ที่จะย้าย → ใช้ `.append()` เพื่อย้าย element เข้าไปใน wrapper
+
+Test 18: Add border
+- เป็นการฝึกเรื่อง: การแก้ CSS style ของ element โดยตรงผ่าน JavaScript
+- วิธีที่ใช้: เข้าถึง `menu.style` แล้วกำหนด `border` ตรงๆ `menu.style.border = "1px solid"`
+
+Test 19: Get innerHTML
+- เป็นการฝึกเรื่อง: การอ่านโครงสร้าง HTML ทั้งหมดที่อยู่ข้างใน element
+- วิธีที่ใช้: แค่เรียกดู `app.innerHTML` ก็จะได้ string ของ HTML ทั้งก้อนข้างในมาเลย
+
+Test 20: Replace #secret with <p>
+- เป็นการฝึกเรื่อง: การสลับ element เดิมทิ้งแล้วเอา element ใหม่เข้าไปแทนที่
+- วิธีที่ใช้: สร้าง `<p>` ใหม่ → ใช้ `secret.parentNode.replaceChild(newP, secret)`
+
+Test 21: Add click event to li
+- เป็นการฝึกเรื่อง: การวนลูปเพื่อผูก event listener ให้กับหลาย element
+- วิธีที่ใช้: เอา `HTMLCollection` มาแปลงเป็น Array `Array.from(liMenu)` → ใช้ `.forEach()` วนผูก `.addEventListener("click", ...)` ให้ทีละตัว
+
+Test 22: Dynamically create list
+- เป็นการฝึกเรื่อง: การสร้าง list ของ element จากข้อมูลด้วยการวนลูป
+- วิธีที่ใช้: ใช้ `for` loop วนสร้าง `<li>` ด้วย `createElement` แล้ว `.appendChild` เข้าไปใน parent ทีละรอบ
+
+Test 23: Check attribute exists
+- เป็นการฝึกเรื่อง: การตรวจสอบว่า element มี attribute ที่เราสนใจหรือไม่
+- วิธีที่ใช้: ใช้ `.hasAttribute("data-id")` จะคืนค่าเป็น boolean (true/false)
+
+Test 24: Uppercase all text in li
+- เป็นการฝึกเรื่อง: การวนลูปเพื่อแก้ไข `textContent` ของ children ทั้งหมด
+- วิธีที่ใช้: อ้างอิงถึง children ด้วย `appetizer.children` → วนลูปด้วย `forEach` → แก้ไข `.textContent` ด้วย `.toUpperCase()`
+
+Test 25: Remove all children
+- เป็นการฝึกเรื่อง: การลบ children ทั้งหมดออกจาก parent element
+- วิธีที่ใช้: วนลูป `Array.from(dynamic.children).forEach(el => el.remove())` เป็นวิธีที่เข้าใจง่ายและทำงานได้ดี
