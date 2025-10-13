@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 9 Event Practice</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    .box { width: 100px; height: 100px; margin: 10px; display: inline-block; }
+    .red { background-color: tomato; }
+    .green { background-color: limegreen; }
+    .blue { background-color: skyblue; }
+    .hidden { display: none; }
+    button { margin: 5px; }
+  </style>
+</head>
+<body>
+  <h1 id="title">Event Practice</h1>
+  <p id="info">Move your mouse or resize window to see updates here.</p>
+  <input id="fname" type="text" placeholder="First name">
+  <input id="lname" type="text" placeholder="Last name">
+  <input id="message" type="text" placeholder="Type message here">
+  <div id="buttons">
+    <button id="submitBtn">Submit</button>
+    <button id="removeBtn">Remove Listener</button>
+  </div>
+  <div id="colorBoxes">
+    <div class="box red"></div>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+  </div>
+  <ul id="menu">
+    <li>Pizza</li>
+    <li>Burger</li>
+    <li>Pasta</li>
+  </ul>
+  <script src="practice.js"></script>
+</body>
+</html>
