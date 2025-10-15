@@ -1,0 +1,119 @@
+Test 1: DOMContentLoaded  
+→ ฝึกฟัง event 'DOMContentLoaded' เพื่อให้โค้ดทำงานหลัง DOM โหลดเสร็จ  
+ผลลัพธ์: แสดง "DOM ready" ใน console  
+
+Test 2: load event  
+→ เรียนรู้ event 'load' ของ window ทำงานเมื่อทุก resource โหลดเสร็จ  
+ผลลัพธ์: log "All loaded"  
+
+Test 3: Click Event  
+→ ฝึกการใช้งาน addEventListener กับปุ่ม #submitBtn  
+ผลลัพธ์: คลิกแล้ว log "Button clicked"  
+
+Test 4: Mouseover Event  
+→ ฝึก event mouseover กับ element (#title)  
+ผลลัพธ์: เมื่อเอาเมาส์ไปวางบน title จะแสดง "Hovered title"  
+
+Test 5: Keyboard Event (keyup)  
+→ ฝึกตรวจจับการกดแป้นพิมพ์และแสดง key ที่พิมพ์  
+ผลลัพธ์: log ตัวอักษรแต่ละ key  
+
+Test 6: Focus / Blur Event  
+→ ฝึกตรวจจับตอนโฟกัสเข้าออกช่อง input (#fname)  
+ผลลัพธ์: log “entering” และ “leaving”  
+
+Test 7: Validation on blur  
+→ ฝึกตรวจสอบค่าช่อง input ตอน blur (ว่างหรือไม่)  
+ผลลัพธ์: log "Empty value" ถ้าช่องว่าง  
+
+Test 8: Resize Event  
+→ ฝึกใช้ event 'resize' เพื่อดูขนาดหน้าต่าง  
+ผลลัพธ์: log ขนาด width × height  
+
+Test 9: Scroll Event  
+→ ฝึกจับตำแหน่งการ scroll ของหน้า  
+ผลลัพธ์: log ค่า scrollY  
+
+Test 10: Click Event (Style Change)  
+→ คลิกที่กล่องสีแดงเพื่อเปลี่ยนสีเป็นชมพู  
+ผลลัพธ์: สีเปลี่ยนและ log “change color”  
+
+Test 11: Mouseover Element  
+→ ฝึกจับ mouseover บน #info  
+ผลลัพธ์: log “mouse over info”  
+
+Test 12: Bubbling Phase  
+→ ฝึกสังเกตการแพร่ event จากลูก (.green) ไปแม่ (#colorBoxes)  
+ผลลัพธ์: log ทั้ง “green box clicked” และ “parent container clicked”  
+
+Test 13: Capturing Phase  
+→ ฝึกดูการจับ event แบบ capture (จากบนลงล่าง)  
+ผลลัพธ์: log “body capturing” ก่อน “blue clicked”  
+
+Test 14: Double Click Event  
+→ ฝึกการใช้ dblclick เพื่อ toggle class  
+ผลลัพธ์: คลิก 2 ครั้งที่ title → toggle ซ่อน/แสดงเมนู  
+
+Test 15: Keydown with Condition  
+→ ฝึกตรวจจับการกด Enter  
+ผลลัพธ์: log “Enter pressed!”  
+
+Test 16: Add/Remove Listener  
+→ ฝึกสร้างและลบ event listener แบบ dynamic  
+ผลลัพธ์: คลิกแรก log "Click only once", คลิกต่อไป log “listener removed”  
+
+Test 17: target vs currentTarget  
+→ ฝึกดูความต่างระหว่าง target และ currentTarget  
+ผลลัพธ์: log class ของ element ที่คลิกและตัว listener  
+
+Test 18: Prevent Default  
+→ ฝึกใช้ e.preventDefault() กับ contextmenu  
+ผลลัพธ์: คลิกขวาบนเมนู → ไม่แสดงเมนู context  
+
+Test 19: Mousemove Event  
+→ ฝึกใช้ event mousemove เพื่อดูตำแหน่งเคอร์เซอร์  
+ผลลัพธ์: log ค่า X, Y  
+
+Test 20: Multiple Listeners  
+→ ฝึกเพิ่ม event เดียวกันหลายตัวในปุ่มเดียว  
+ผลลัพธ์: log “first”, “second”, “third”  
+
+Test 21: Input Event Mirror  
+→ ฝึกใช้ event input เพื่ออัปเดตข้อความแบบเรียลไทม์  
+ผลลัพธ์: พิมพ์ใน #message → ข้อความไปแสดงใน #info  
+
+Test 22: Loop + Click on li  
+→ ฝึกผูก event กับ list หลายตัวด้วย forEach  
+ผลลัพธ์: คลิก li ใดๆ แล้ว log ข้อความของมัน  
+
+Test 23: Capturing Listener  
+→ ฝึกการใช้ capture phase ที่ระดับ document  
+ผลลัพธ์: log “capturing phase” ก่อน listener อื่น  
+
+Test 24: once:true  
+→ ฝึกใช้ option `{once:true}` ให้ event ทำงานแค่ครั้งเดียว  
+ผลลัพธ์: คลิก body แล้ว log “triggered once” เพียงรอบเดียว  
+
+Test 25: Keyup Detail  
+→ ฝึกจับ event.key และ event.code  
+ผลลัพธ์: log key และ code ของปุ่มที่กด  
+
+Test 26: Mouseout Event  
+→ ฝึกการตรวจจับเมื่อ mouse ออกจาก element  
+ผลลัพธ์: log “Mouse out from green”  
+
+Test 27: Event Delegation  
+→ ฝึกใช้ event delegation โดยผูก event ที่พ่อ (#menu)  
+ผลลัพธ์: คลิก li ใดก็ได้ → log ชื่อเมนู  
+
+Test 28: Scroll → Change Style  
+→ ฝึกเชื่อม event scroll กับการเปลี่ยน style  
+ผลลัพธ์: เมื่อ scroll → สี title เปลี่ยนเป็นแดง  
+
+Test 29: Key Event Change Background  
+→ ฝึกใช้ keydown event เปลี่ยนพื้นหลังเมื่อกด Enter  
+ผลลัพธ์: สีพื้นหลังเปลี่ยนเป็นน้ำเงิน  
+
+Test 30: Mouse Leave Window  
+→ ฝึกตรวจจับเมื่อเมาส์ออกนอกหน้าเว็บ  
+ผลลัพธ์: log “Goodbye!”

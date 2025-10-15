@@ -83,21 +83,33 @@ const test20 = () => {
 }
 submitBtn.addEventListener("click", test20);
 // Test 21: Add input event to #message to mirror text into #info
-
+message.addEventListener('input', e => {
+  info.textContent = e.target.value
+  console.log('Test 21: ', info.textContent)
+})
 // Test 22: Add click event to <li> that logs its text
-
+document.querySelectorAll('#menu li').forEach(e => e.addEventListener('click', () => console.log('Test 22: ', e.textContent)))
 // Test 23: Add capturing listener to document logging “capturing phase”
-
+document.addEventListener('click', () => console.log('Test 23: capturing phase'), true)
 // Test 24: Use once:true → event triggers only once
-
+document.body.addEventListener("click", () => console.log("Test 24: triggered once"), { once: true });
 // Test 25: Keyup event log which key and code pressed
-
+document.addEventListener('keyup', e => console.log('Test 25:', e.key, e.code))
 // Test 26: Mouseout from .green → log message
-
+document.querySelector('.green').addEventListener('mouseout', () => console.log('Test 26: Mouse out from green'))
 // Test 27: Add event delegation on #menu (log li text when clicked)
-
+menu.addEventListener('click', e => console.log("Test 27: delegated click on", e.target.textContent))
 // Test 28: Scroll window → change title color
-
+window.addEventListener('scroll', () => {
+  title.style.color = 'red', 
+  console.log('Test 28: ', title.style.color)
+})
 // Test 29: When mouse enters body → change background
-
+document.body.addEventListener('keydown', e => {
+  if (e.key === 'Enter'){
+    document.body.style.backgroundColor = 'blue'
+    console.log('Test 29', document.body.style.backgroundColor)
+  }
+})
 // Test 30: When mouse leaves window → log "Goodbye!"
+document.addEventListener('mouseout', () => console.log('Test 30: Goodbye!'))
