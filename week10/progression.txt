@@ -1,0 +1,119 @@
+Test 1: Save bgColor to localStorage when Save clicked
+เป็นการฝึกเรื่อง: เก็บค่าจาก input ลงใน localStorage
+วิธีที่ใช้: ใช้ addEventListener('click') → localStorage.setItem(key, value)
+
+Test 2: Load bgColor from localStorage when page loads
+เป็นการฝึกเรื่อง: โหลดค่าจาก localStorage เมื่อหน้าเว็บเปิดขึ้น
+วิธีที่ใช้: ใช้ window.addEventListener('load') และ set ค่าให้ backgroundColor
+
+Test 3: Save fontColor and fontSize to localStorage
+เป็นการฝึกเรื่อง: เก็บค่าหลาย key พร้อมกันใน localStorage
+วิธีที่ใช้: ใช้ setItem กับ key “fontColor” และ “fontSize”
+
+Test 4: Apply saved fontColor and fontSize on load
+เป็นการฝึกเรื่อง: ดึงค่าที่บันทึกไว้มาใช้ทันทีตอนโหลดหน้าเว็บ
+วิธีที่ใช้: ดึงข้อมูลด้วย getItem และเปลี่ยน style ของ body
+
+Test 5: Clear all localStorage when Reset clicked
+เป็นการฝึกเรื่อง: การลบข้อมูลทั้งหมดใน localStorage
+วิธีที่ใช้: ใช้ localStorage.clear() ภายใต้ event ‘click’
+
+Test 6: Save page visit count to localStorage
+เป็นการฝึกเรื่อง: การนับจำนวนครั้งที่ผู้ใช้เข้าเว็บ
+วิธีที่ใช้: อ่านค่าเดิมด้วย getItem → เพิ่มค่า → setItem กลับ
+
+Test 7: Save temporary session data
+เป็นการฝึกเรื่อง: เก็บข้อมูลชั่วคราวด้วย sessionStorage
+วิธีที่ใช้: sessionStorage.setItem(key, value)
+
+Test 8: Remove session data
+เป็นการฝึกเรื่อง: การลบข้อมูลเฉพาะ key ใน sessionStorage
+วิธีที่ใช้: sessionStorage.removeItem(key)
+
+Test 9: Store array as JSON in localStorage
+เป็นการฝึกเรื่อง: เก็บ array ในรูปแบบ JSON
+วิธีที่ใช้: ใช้ JSON.stringify() ก่อนเก็บ และ JSON.parse() เมื่อต้องการอ่าน
+
+Test 10: Store object as JSON in localStorage
+เป็นการฝึกเรื่อง: เก็บ object ใน localStorage
+วิธีที่ใช้: แปลง object เป็น string ด้วย JSON.stringify()
+
+Test 11: Delete one specific key from localStorage
+เป็นการฝึกเรื่อง: ลบ key เฉพาะตัวจาก localStorage
+วิธีที่ใช้: localStorage.removeItem('key')
+
+Test 12: Use CookieUtil to set cookie
+เป็นการฝึกเรื่อง: การตั้งค่า cookie ด้วย document.cookie
+วิธีที่ใช้: เขียน document.cookie = 'name=value'
+
+Test 13: Encode cookie name and value
+เป็นการฝึกเรื่อง: เข้ารหัสค่าที่เก็บใน cookie
+วิธีที่ใช้: ใช้ encodeURIComponent() ก่อนบันทึก cookie
+
+Test 14: Decode cookie
+เป็นการฝึกเรื่อง: ถอดรหัส cookie ที่ถูก encode ไว้
+วิธีที่ใช้: ใช้ decodeURIComponent() อ่านค่ากลับมา
+
+Test 15: Create cookie that expires tomorrow
+เป็นการฝึกเรื่อง: ตั้งวันหมดอายุของ cookie
+วิธีที่ใช้: สร้าง new Date() → setDate(+1) → ใส่ expires=
+
+Test 16: Read specific cookie manually
+เป็นการฝึกเรื่อง: อ่าน cookie เฉพาะชื่อโดยไม่ใช้ library
+วิธีที่ใช้: ใช้ document.cookie.split('; ').find(...)
+
+Test 17: Remove cookie by setting past expiry
+เป็นการฝึกเรื่อง: ลบ cookie แบบ manual
+วิธีที่ใช้: ตั้ง expires= วันที่ในอดีต (เช่น 1970)
+
+Test 18: Save preferences object to localStorage
+เป็นการฝึกเรื่อง: เก็บ object ของการตั้งค่า
+วิธีที่ใช้: JSON.stringify() และ setItem('prefs', ...)
+
+Test 19: Update localStorage value
+เป็นการฝึกเรื่อง: เขียนทับค่าเดิมใน localStorage
+วิธีที่ใช้: ใช้ setItem กับ key เดิมเพื่อแทนที่ข้อมูล
+
+Test 20: Check if key exists in localStorage
+เป็นการฝึกเรื่อง: ตรวจสอบว่ามี key อยู่หรือไม่
+วิธีที่ใช้: ใช้ getItem() !== null เป็นตัวเช็ค
+
+Test 21: List all keys in localStorage
+เป็นการฝึกเรื่อง: การเข้าถึงทุก key ใน localStorage
+วิธีที่ใช้: ใช้ for...in loop เพื่อแสดง key ทั้งหมด
+
+Test 22: Save login status to sessionStorage
+เป็นการฝึกเรื่อง: เก็บสถานะการเข้าสู่ระบบ
+วิธีที่ใช้: setItem('logIn', true)
+
+Test 23: Increment counter in sessionStorage
+เป็นการฝึกเรื่อง: เพิ่มค่าตัวนับใน sessionStorage
+วิธีที่ใช้: อ่านค่าเดิม → ++ → setItem กลับไป
+
+Test 24: Remove all sessionStorage
+เป็นการฝึกเรื่อง: การลบข้อมูลทุกตัวใน sessionStorage
+วิธีที่ใช้: sessionStorage.clear()
+
+Test 25: Check data persistence after reload
+เป็นการฝึกเรื่อง: ตรวจสอบว่าข้อมูลใน localStorage คงอยู่หลัง reload
+วิธีที่ใช้: ใช้ window.addEventListener('load') เพื่อ log ค่า
+
+Test 26: Save multiple settings and show them
+เป็นการฝึกเรื่อง: การดูภาพรวมข้อมูลใน localStorage
+วิธีที่ใช้: console.log(localStorage)
+
+Test 27: Simulate remember me using localStorage
+เป็นการฝึกเรื่อง: จำสถานะผู้ใช้ด้วย localStorage
+วิธีที่ใช้: setItem('remember', true) แล้วตรวจสอบค่าเมื่อโหลดใหม่
+
+Test 28: Limit localStorage keys count (simulate clean-up)
+เป็นการฝึกเรื่อง: การจำกัดจำนวน key ใน localStorage
+วิธีที่ใช้: ตรวจ localStorage.length และ clear() หากเกิน
+
+Test 29: Use try/catch for JSON parse safety
+เป็นการฝึกเรื่อง: ป้องกัน error จาก JSON.parse()
+วิธีที่ใช้: ใช้ try/catch ครอบการ parse ค่า
+
+Test 30: Combine cookie + localStorage → user tracking
+เป็นการฝึกเรื่อง: การผสม cookie และ localStorage เพื่อจำผู้ใช้
+วิธีที่ใช้: เก็บค่า trackId ใน cookie และ lastPage ใน localStorage
